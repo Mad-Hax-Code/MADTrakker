@@ -14,19 +14,35 @@ java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
     mavenCentral()
+
+    maven {
+        url = uri("http://repo.spring.io/milestone")
+    }
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+//    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+    // All implementation R2DBC stuff here:
+    implementation("org.springframework.data:spring-data-r2dbc:1.0.0.M6")
+    implementation("io.projectreactor:reactor-core")
+
     runtimeOnly("org.springframework.boot:spring-boot-devtools")
-    runtimeOnly("com.h2database:h2")
-    runtimeOnly("org.postgresql:postgresql")
+//    runtimeOnly("com.h2database:h2")
+
+    // All runtime R2DBC stuff here:
+    runtimeOnly("io.r2dbc:r2dbc-h2")
+    runtimeOnly("io.r2dbc:r2dbc-postgresql:1.0.0M6")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
+
+    // All testImplementation R2DBC stuff:
 }
 
 tasks.withType<KotlinCompile> {

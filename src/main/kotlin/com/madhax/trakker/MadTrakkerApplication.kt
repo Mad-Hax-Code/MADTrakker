@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class MadTrakkerApplication
 
 fun main(args: Array<String>) {
-    runApplication<MadTrakkerApplication>(*args)
+	runApplication<MadTrakkerApplication>(*args)
 }

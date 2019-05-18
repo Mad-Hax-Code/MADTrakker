@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore
 
 data class User (
 
-        var id: Long,
+        var id: Long?,
         var firstName: String,
         var lastName: String,
         var userName: String,

@@ -29,15 +29,17 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
     // All implementation R2DBC stuff here:
-    implementation("org.springframework.data:spring-data-r2dbc:1.0.0.M6")
+    implementation("org.springframework.data:spring-data-r2dbc:1.0.0.M2")
+    implementation("org.springframework.boot.experimental:spring-boot-starter-r2dbc-h2")
     implementation("io.projectreactor:reactor-core")
+    implementation("io.r2dbc:r2dbc-spi:1.0.0.M7")
 
     runtimeOnly("org.springframework.boot:spring-boot-devtools")
 //    runtimeOnly("com.h2database:h2")
 
     // All runtime R2DBC stuff here:
     runtimeOnly("io.r2dbc:r2dbc-h2")
-    runtimeOnly("io.r2dbc:r2dbc-postgresql:1.0.0M6")
+    runtimeOnly("io.r2dbc:r2dbc-postgresql:1.0.0.M6")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")

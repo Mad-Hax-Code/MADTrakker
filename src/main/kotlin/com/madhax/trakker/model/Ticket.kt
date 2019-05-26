@@ -7,16 +7,16 @@ import javax.persistence.*
 data class Ticket(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        var id: Long?,
-        var name: String?,
-        var description: String?,
-        var priority: Priority?,
-        var dateCreated: LocalDateTime?,
+        private var id: Long?,
+        private var name: String?,
+        private var description: String?,
+        private var priority: Priority?,
+        private var dateCreated: LocalDateTime?,
         @OneToMany
-        var tasks: List<Task>?,
+        private var tasks: List<Task>?,
         @OneToMany
-        var notes: List<Note>?,
+        private var notes: List<Note>?,
         @OneToMany
-        var blockers: List<Blocker>?,
+        private var blockers: List<Blocker>?,
         @OneToOne
-        var creator: User?)
+        private var creator: User?)

@@ -10,11 +10,11 @@ import javax.persistence.Id
 data class User (
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        var id: Long,
-        var firstName: String,
-        var lastName: String,
-        var userName: String,
+        private var id: Long,
+        private var firstName: String,
+        private var lastName: String,
+        private var userName: String,
         @JsonIgnore
-        var password: String,
-        var email: String,
-        var enabled: Boolean)
+        private var password: String,
+        private var email: String,
+        private var enabled: Boolean)

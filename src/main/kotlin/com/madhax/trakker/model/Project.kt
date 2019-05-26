@@ -7,10 +7,10 @@ import javax.persistence.*
 data class Project(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        var id: String?,
-        var name: String?,
-        var description: String?,
+        private var id: String?,
+        private var name: String?,
+        private var description: String?,
         @OneToOne
-        var owner: User?,
+        private var owner: User?,
         @OneToMany
-        val tickets: List<Ticket>? = null)
+        private val tickets: List<Ticket>? = null)

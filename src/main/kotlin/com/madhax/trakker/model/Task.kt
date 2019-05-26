@@ -7,10 +7,10 @@ import javax.persistence.*
 data class Task(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        var id: Long?,
-        var body: String?,
-        var dateCreated: LocalDateTime?,
+        private var id: Long?,
+        private var body: String?,
+        private var dateCreated: LocalDateTime?,
         @OneToOne
-        var ticket: Ticket?,
+        private var ticket: Ticket?,
         @OneToOne
-        var creator: User?)
+        private var creator: User?)

@@ -1,14 +1,20 @@
 package com.madhax.trakker.model
 
 import org.springframework.data.annotation.Id
-import org.springframework.data.mongodb.core.mapping.Document
 import java.time.LocalDateTime
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.OneToOne
 
-@Document
+@Entity
 data class Note(
         @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         var id: String?,
         var body: String?,
-        var ticket: Ticket?,
         var dateCreated: LocalDateTime?,
+        @OneToOne
+        var ticket: Ticket?,
+        @OneToOne
         var creator: User?)

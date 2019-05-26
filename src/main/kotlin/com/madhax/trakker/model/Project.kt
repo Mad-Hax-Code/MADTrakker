@@ -1,16 +1,16 @@
 package com.madhax.trakker.model
 
 import org.springframework.data.annotation.Id
-import org.springframework.data.mongodb.core.mapping.DBRef
-import org.springframework.data.mongodb.core.mapping.Document
+import javax.persistence.*
 
-@Document
+@Entity
 data class Project(
         @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         var id: String?,
         var name: String?,
         var description: String?,
-        @DBRef
+        @OneToOne
         var owner: User?,
-        @DBRef
+        @OneToMany
         val tickets: List<Ticket>? = null)

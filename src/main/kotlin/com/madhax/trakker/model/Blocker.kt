@@ -1,13 +1,14 @@
 package com.madhax.trakker.model
 
+import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.mapping.Document
 import java.time.LocalDateTime
-import javax.persistence.*
 
-@Entity
-data class Blocker(var message: String?, @OneToOne var ticket: Ticket?, @OneToOne var creator: User?, var dateCreated: LocalDateTime?) {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long? = null
-
-}
+@Document
+data class Blocker(
+        @Id
+        private var id: String? = null,
+        private var message: String?,
+        private var ticket: Ticket?,
+        private var creator: User?,
+        private var dateCreated: LocalDateTime?)

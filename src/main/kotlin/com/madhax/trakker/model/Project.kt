@@ -13,4 +13,4 @@ data class Project(
         @OneToOne
         var owner: User?,
         @OneToMany
-        val tickets: List<Ticket>? = null)
+        var tickets: List<Ticket>?)

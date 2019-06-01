@@ -11,7 +11,7 @@ import javax.persistence.OneToOne
 data class Blocker(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private var id: String?,
+        private var id: Long?,
         private var message: String?,
         private var dateCreated: LocalDateTime?,
         @OneToOne

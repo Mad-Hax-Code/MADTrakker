@@ -7,7 +7,7 @@ import javax.persistence.*
 data class Project(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        var id: String?,
+        var id: Long?,
         var name: String?,
         var description: String?,
         @OneToOne

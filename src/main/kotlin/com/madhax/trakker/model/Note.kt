@@ -11,7 +11,7 @@ import javax.persistence.OneToOne
 data class Note(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        var id: String?,
+        var id: Long?,
         var body: String?,
         var dateCreated: LocalDateTime?,
         @OneToOne

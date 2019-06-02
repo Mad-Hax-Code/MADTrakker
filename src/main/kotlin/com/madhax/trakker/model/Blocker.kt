@@ -8,10 +8,10 @@ import javax.persistence.*
 data class Blocker(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private var id: Long?,
-        private var message: String?,
-        private var dateCreated: LocalDateTime?,
+        var id: Long?,
+        var message: String?,
+        var dateCreated: LocalDateTime?,
         @OneToOne
-        private var ticket: Ticket?,
+        var ticket: Ticket?,
         @OneToOne
-        private var creator: User?)
+        var creator: User?)

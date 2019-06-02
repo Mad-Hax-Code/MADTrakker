@@ -16,19 +16,17 @@ class ProjectService(
 
     fun getAll(): List<Project> {
         log.debug("Getting list of all projects...")
-        var projectList: List<Project> = this.projectRepository.findAll().toList()
-        return projectList
+        return projectRepository.findAll().toList()
     }
 
     fun getById(id: Long): Project {
         log.debug("Getting project with id: {}", id)
-        val project: Project = this.projectRepository.findById(id).get()
-        return project
+        return projectRepository.findById(id).get()
     }
 
     fun save(project: Project): Project {
         val savedProject: Project = this.projectRepository.save(project)
-        log.debug("Project saved: {}", savedProject.name)
+        log.debug("Project saved: ${savedProject.name}")
         return savedProject
     }
 

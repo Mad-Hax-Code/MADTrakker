@@ -31,8 +31,14 @@ dependencies {
     runtimeOnly("org.springframework.boot:spring-boot-devtools")
     runtimeOnly("com.h2database:h2")
 
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-test") {
+        exclude(module = "junit")
+//        exclude(module = "mockito-core")
+    }
     testImplementation("io.projectreactor:reactor-test")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine")
+//    testImplementation("io.mockk:mockk:1.8.8")
+    testImplementation("org.mockito:mockito-junit-jupiter:2.28.2")
 }
 
 tasks.withType<KotlinCompile> {
